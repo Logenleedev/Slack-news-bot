@@ -35,13 +35,13 @@ const getRandomTechNews = (callback, user) => {
     .header("X-RapidAPI-Key", API_KEY)
     .end(function (response) {
 
-        let newsJSON = response.body;
+        var newsJSON = response.body;
         //change here
-        let news = "*Viral News* in Movies : \n\n\n\n";
-        for(i = 0; i < newsJSON.results.stories.length; i++) {
+        var news = "*Viral News* in Movies : \n\n\n\n";
+        for ( i = 0; i < newsJSON.results.stories.length; i++) {
             news += "_Excerpt:_   \n" + ">" + newsJSON.results.stories[i].excerpt + "\n"
             news += "_Let's see the article!_ \n" + newsJSON.results.stories[i].url + "\n\n\n"
-        }
+        };
         callback(news, user);
     });
 
