@@ -4,9 +4,10 @@ var NewsAPI = require("newsapi");
 var unirest = require("unirest");
 
 var API_KEY = process.env.API_KEY;
+var Slack_API = process.env.Slack_API;
 // create a bot
 var bot = new SlackBot({
-    token: "xoxb-675703372838-704705329606-eI8xqRnFWjNRYdzdbTCKUFIP",
+    token: Slack_API,
     name: "aloha-ai"
 });
 
