@@ -31,19 +31,19 @@ const postMessage = (message, user) => {
 const getRandomTechNews = (callback, user) => {
 
 
-    // unirest.get("https://nuzzel-news-v1.p.rapidapi.com/news?count=10&q=movies")
-    //     .header("X-RapidAPI-Host", "nuzzel-news-v1.p.rapidapi.com")
-    //     .header("X-RapidAPI-Key", API_KEY)
-    //     .end(function (response) {
+    unirest.get("https://nuzzel-news-v1.p.rapidapi.com/news?count=10&q=movies")
+        .header("X-RapidAPI-Host", "nuzzel-news-v1.p.rapidapi.com")
+        .header("X-RapidAPI-Key", API_KEY)
+        .end(function (response) {
 
-    //         var newsJSON = response.body;
+            var newsJSON = response.body;
 
-    //         var news = "*Viral News* in Movies : \n\n\n\n";
-    //         for (i = 0; i < newsJSON.results.stories.length; i++) {
-    //             news += "_Excerpt:_   \n" + ">" + newsJSON.results.stories[i].excerpt + "\n"
-    //             news += "_Let's see the article!_ \n" + newsJSON.results.stories[i].url + "\n\n\n"
-    //         };
-    //         callback(news, user);
-    //     });
-    callback("Hellow", user);
+            var news = "*Viral News* in Movies : \n\n\n\n";
+            for (i = 0; i < newsJSON.results.stories.length; i++) {
+                news += "_Excerpt:_   \n" + ">" + newsJSON.results.stories[i].excerpt + "\n"
+                news += "_Let's see the article!_ \n" + newsJSON.results.stories[i].url + "\n\n\n"
+            };
+            callback(news, user);
+        });
+
 }
