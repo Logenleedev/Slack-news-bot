@@ -36,8 +36,8 @@ const getRandomTechNews = (callback, user) => {
         .header("X-RapidAPI-Key", API_KEY)
         .end(function (response) {
 
-            var newsJSON = JSON.parse(response.raw_body);
-            console.log(response);
+            var newsJSON = response.body;
+
             var news = "*Viral News* in Movies : \n\n\n\n";
             for (i = 0; i < newsJSON.results.stories.length; i++) {
                 news += "_Excerpt:_   \n" + ">" + newsJSON.results.stories[i].excerpt + "\n"
