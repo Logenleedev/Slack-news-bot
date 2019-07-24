@@ -2,6 +2,10 @@
   "name": "news-bot",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node":"10.16.0",
+    "npm":"6.9.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
